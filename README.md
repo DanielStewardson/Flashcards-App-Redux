@@ -1,26 +1,21 @@
-# To Run
+# Flashcards Quiz App
 
-Run `npm start` in the project root and the app will be available on port 3000.
+A React frontend app using Redux store management.
 
-# State
+View live on Github pages here - 
 
-The app's state is totally normalized, with slices for topics, quizzes, and cards.
+---
 
-# Routes
+This app was started using a template provided by a CodeCademy course.
 
-- `/new-topic` – form to create a new topic
-- `/topics` – index of all topics
-- `/topics/:topicId` – page for an individual topic
-- `/new-quiz` – form to create a new quiz
-- `/quizzes` – index of all quizzes
-- `/quizzes/:quizId` – page for an individual quiz
+The project was to implement the use of Redux as store management.
 
-# To Test
+---
 
-1. Create topics
-2. Create quizzes
-3. Visit the page for an individual quiz and flip the cards over
+## The app
 
-# Questions
+This front-end app allows the user to create quizzes using flashcards and categorizing them by topics.
 
-Is this appropriately scoped? Does it have too many features? Too few?
+* The user can create topics (eg. math, science). 
+* You can then create quizzes linked to these topics such as chemistry, biology linked with the science topic.
+* Each quiz can have a number of 'flashcards' created for it, which have two 'sides'. One side could be a question or prompt and when clicked the other side will render, displaying an answer. 
