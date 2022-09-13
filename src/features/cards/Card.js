@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { selectAllCards } from "./cardsSlice";
 
 export default function Card({ id }) {
-  const cards = useSelector(selectAllCards); // replace this with a call to your selector to get all the cards in state
+  const cards = useSelector(selectAllCards);
   const card = cards[id];
   const [flipped, setFlipped] = useState(false);
 
