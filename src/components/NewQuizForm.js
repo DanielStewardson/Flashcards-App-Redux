@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import ROUTES from "../app/routes";
 import { selectAllTopics } from "../features/topics/topicsSlice";
-import { createQuizThunk } from '../features/quizzes/quizzezSlice';
+import { createQuizThunk } from '../features/quizzes/quizzesSlice';
 import { addCard } from "../features/cards/cardsSlice";
 
 export default function NewQuizForm() {
@@ -23,7 +23,6 @@ export default function NewQuizForm() {
 
     const cardIds = [];
 
-    // create the new cards here and add each card's id to cardIds
     cards.forEach(card => {
       const id = uuidv4();
       cardIds.push(id);
@@ -32,8 +31,6 @@ export default function NewQuizForm() {
         ...card
       }))
     });
-
-    // create the new quiz here
 
     dispatch(createQuizThunk({
       id: uuidv4(),
@@ -93,7 +90,6 @@ export default function NewQuizForm() {
               }
               placeholder="Front"
             />
-
             <input
               id={`card-back-${index}`}
               value={cards[index].back}
@@ -102,7 +98,6 @@ export default function NewQuizForm() {
               }
               placeholder="Back"
             />
-
             <button
               onClick={(e) => removeCard(e, index)}
               className="remove-card-button"

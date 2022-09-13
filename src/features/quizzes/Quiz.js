@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import Card from "../cards/Card";
 import ROUTES from "../../app/routes";
 import { useSelector } from "react-redux";
-import { selectAllQuizzes } from "./quizzezSlice";
+import { selectAllQuizzes } from "./quizzesSlice";
 
 export default function Topic() {
   const quizzes = useSelector(selectAllQuizzes); // replace this with a call to your selector to get all the quizzes in state
