@@ -24,10 +24,23 @@ const topicsSlice = createSlice({
     addQuizId: (state, action) => {
       const { quizId, topicId } = action.payload;
       state.topics[topicId].quizIds.push(quizId);
+    },
+    removeQuizId: (state, action) => {
+      const { quizId, topicId } = action.payload;
+      return {
+        ...state,
+        topics: {
+          ...state.topics,
+          [action.payload.topicId]: {
+            ...state.topics[action.payload.topicId],
+            quizIds: [...state.topics[topicId].quizIds.filter(id => id !== quizId)]
+          }
+        }
+      };
     }
   }
 });
 
 export const selectAllTopics = (state) => state.topics.topics;
-export const { addTopic, addQuizId } = topicsSlice.actions;
+export const { addTopic, addQuizId, removeQuizId } = topicsSlice.actions;
 export default topicsSlice.reducer;
