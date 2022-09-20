@@ -5,21 +5,21 @@ import { useSelector } from "react-redux";
 import { selectAllQuizzes } from "./quizzesSlice";
 
 export default function Topic() {
-  const quizzes = useSelector(selectAllQuizzes); // replace this with a call to your selector to get all the quizzes in state
+  const quizzes = useSelector(selectAllQuizzes);
   let { quizId } = useParams();
   const quiz = quizzes[quizId];
 
   return (
-    <section>
+    <section className="center">
       <h1>{quiz.name}</h1>
+      <Link to={ROUTES.quizzesRoute()} className="button right-side-button">
+        Back to quizzes
+      </Link>
       <ul className="cards-list">
         {quiz.cardIds.map((id) => (
           <Card key={id} id={id} />
         ))}
       </ul>
-      <Link to={ROUTES.newQuizRoute()} className="button center">
-        Create a New Quiz
-      </Link>
     </section>
   );
 }

@@ -59,7 +59,7 @@ export default function NewQuizForm() {
   };
 
   return (
-    <section>
+    <section className="center">
       <h1>Create a new quiz</h1>
       <form onSubmit={handleSubmit}>
         <input

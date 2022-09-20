@@ -7,12 +7,14 @@ import { selectAllTopics } from "./topicsSlice";
 export default function Topics() {
   const topics = useSelector(selectAllTopics);
 
+  const buttonPosition = Object.values(topics).length === 0 ? 'center' : 'right-side-button';
+
   return (
     <section className="center">
       <h1>Topics</h1>
       <Link
         to={ROUTES.newTopicRoute()}
-        className="button create-new-topic-button"
+        className={`button ${buttonPosition}`}
       >
         Create New Topic
       </Link>

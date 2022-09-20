@@ -17,7 +17,7 @@ export default function NewTopicForm() {
     if (name.length === 0) {
       return;
     }
-    // dispatch your add topic action here
+
     dispatch(addTopic({
       id: uuidv4(),
       name: name,
@@ -27,7 +27,7 @@ export default function NewTopicForm() {
   };
 
   return (
-    <section>
+    <section className="center">
       <form onSubmit={handleSubmit}>
         <h1 className="center">Create a new topic</h1>
         <div className="form-section">

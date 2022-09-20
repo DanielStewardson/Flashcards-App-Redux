@@ -68,13 +68,15 @@ button:hover,
   cursor: pointer;
 }
 
-.create-new-topic-button {
-  margin: 0 auto;
+.right-side-button {
+  margin: 0 0 0 auto;
   display: block;
   width: 182px;
 }
 
 section {
+  width: 80%;
+  margin: 0 auto;
   padding: 20px 16px;
 }
 
@@ -149,11 +151,20 @@ option {
 }
 
 .big-tile {
+  position: relative;
   border: 1px solid #bcbcbc;
   border-radius: 3px;
   padding: 26px 20px;
   margin-top: 20px;
   text-align: start;
+}
+
+.delete-quiz {
+  position: absolute;
+  z-index: 2;
+  padding: 3px 8px;
+  top: 5px;
+  right: 5px;
 }
 
 .text-content * {
@@ -197,5 +208,6 @@ option {
   border: none;
   color: white;
   padding: 73px 44px;
-  width: 100%;
+  margin-top: 20px;
+  width: 80%;
 }
