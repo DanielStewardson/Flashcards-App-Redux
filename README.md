@@ -2,7 +2,7 @@
 
 A React frontend app using Redux store management.
 
-View live on Github pages here - 
+View live on Github pages here - [React-Planner-App](https://danielstewardson.github.io/Flashcards-App-Redux/)
 
 ---
 
