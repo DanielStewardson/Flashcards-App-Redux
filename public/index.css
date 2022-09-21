@@ -167,6 +167,23 @@ option {
   right: 5px;
 }
 
+.delete-topic-modal {
+  position: fixed;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40VW;
+  height: 40VH;
+  background: #ffffff;
+  border: 2px solid #234467;
+  border-radius: 3px;
+  z-index: 10;
+}
+
 .text-content * {
   margin: 0;
 }
