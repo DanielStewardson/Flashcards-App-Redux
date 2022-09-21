@@ -6,6 +6,7 @@ import {
   NavLink,
   useRouteMatch,
 } from "react-router-dom";
+import HomePage from "../Pages/HomePage";
 import NewQuizForm from "../components/NewQuizForm";
 import NewTopicForm from "../components/NewTopicForm";
 import Topics from "../features/topics/Topics";
@@ -43,6 +44,9 @@ export default function App() {
         </Route>
         <Route path="/quizzes">
           <QuizRoutes />
+        </Route>
+        <Route path="">
+          <HomePage />
         </Route>
       </Switch>
     </Router>
