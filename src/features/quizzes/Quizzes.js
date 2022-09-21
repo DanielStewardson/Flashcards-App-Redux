@@ -12,7 +12,6 @@ export default function Quizzes() {
 
   const deleteQuiz = (e, quizId, topicId) => {
     e.preventDefault();
-    console.log('quiz id -', quizId, '\n topic id -', topicId)
     dispatch(deleteQuizThunk(quizId, topicId))
   };
 
