@@ -176,8 +176,8 @@ option {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40VW;
-  height: 40VH;
+  width: 35VW;
+  height: 35VH;
   background: #ffffff;
   border: 2px solid #234467;
   border-radius: 3px;
