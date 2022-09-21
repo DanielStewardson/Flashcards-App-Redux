@@ -11,6 +11,8 @@ export default function NewQuizForm() {
   const [name, setName] = useState("");
   const [cards, setCards] = useState([]);
   const [topicId, setTopicId] = useState("");
+  const [quizPlaceholder, setQuizPlaceholder] = useState('Quiz Title');
+  const [topicPlaceholder, setTopicPlaceholder] = useState('Topic');
   const history = useHistory();
   const dispatch = useDispatch();
   const topics = useSelector(selectAllTopics);
@@ -18,8 +20,14 @@ export default function NewQuizForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.length === 0) {
+      setQuizPlaceholder('Choose a quiz title!');
       return;
-    }
+    };
+    
+    if (!topicId) {
+      setTopicPlaceholder(Object.keys(topics).length === 0 ? 'Create a topic first!' : 'Choose a topic!');
+      return;
+    };
 
     const cardIds = [];
 
@@ -66,14 +74,14 @@ export default function NewQuizForm() {
           id="quiz-name"
           value={name}
           onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Quiz Title"
+          placeholder={quizPlaceholder}
         />
         <select
           id="quiz-topic"
           onChange={(e) => setTopicId(e.currentTarget.value)}
-          placeholder="Topic"
+          placeholder={topicPlaceholder}
         >
-          <option value="">Topic</option>
+          <option value="">{topicPlaceholder}</option>
           {Object.values(topics).map((topic) => (
             <option key={topic.id} value={topic.id}>
               {topic.name}
