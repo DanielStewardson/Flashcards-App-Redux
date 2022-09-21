@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Flashcards-App-Redux/static/js/main.6bc0423c.chunk.js",
-    "main.js.map": "/Flashcards-App-Redux/static/js/main.6bc0423c.chunk.js.map",
+    "main.js": "/Flashcards-App-Redux/static/js/main.1aabfbdb.chunk.js",
+    "main.js.map": "/Flashcards-App-Redux/static/js/main.1aabfbdb.chunk.js.map",
     "runtime-main.js": "/Flashcards-App-Redux/static/js/runtime-main.a06e1413.js",
     "runtime-main.js.map": "/Flashcards-App-Redux/static/js/runtime-main.a06e1413.js.map",
     "static/js/2.e3247265.chunk.js": "/Flashcards-App-Redux/static/js/2.e3247265.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.a06e1413.js",
     "static/js/2.e3247265.chunk.js",
-    "static/js/main.6bc0423c.chunk.js"
+    "static/js/main.1aabfbdb.chunk.js"
   ]
 }
