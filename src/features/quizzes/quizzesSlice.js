@@ -42,7 +42,6 @@ const quizzesSlice = createSlice({
     },
     deleteQuiz: (state, action) => {
       const newQuizzes = Object.fromEntries(Object.entries(state.quizzes).filter(([key]) => key !== action.payload));
-
       return {
         ...state,
         quizzes: {...newQuizzes}

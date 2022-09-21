@@ -1,13 +1,19 @@
 import NewTopicForm from "../../components/NewTopicForm";
 import { Link } from "react-router-dom";
 import ROUTES from "../../app/routes";
-import { useSelector } from "react-redux";
-import { selectAllTopics } from "./topicsSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectAllTopics, deleteTopicThunk } from "./topicsSlice";
 
 export default function Topics() {
   const topics = useSelector(selectAllTopics);
+  const dispatch = useDispatch();
 
   const buttonPosition = Object.values(topics).length === 0 ? 'center' : 'right-side-button';
+
+  const deleteTopic = (e, topicId) => {
+    e.preventDefault();
+    dispatch(deleteTopicThunk(topicId));
+  };
 
   return (
     <section className="center">
@@ -22,6 +28,15 @@ export default function Topics() {
         {Object.values(topics).map((topic) => (
           <Link to={ROUTES.topicRoute(topic.id)} key={topic.id}>
             <li className="big-tile topic" key={topic.id}>
+
+                <button 
+                  className='delete-quiz' 
+                  value={topic.id}
+                  onClick={(e) => deleteTopic(e, topic.id)}
+                  >
+                  X
+                </button>
+
                 <div className="tile-text-container">
                   <img src={topic.icon} alt="" />
                   <div className="text-content">
