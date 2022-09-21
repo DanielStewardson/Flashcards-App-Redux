@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { deleteQuiz } from "../quizzes/quizzesSlice";
+import { deleteQuizThunk } from "../quizzes/quizzesSlice";
 
 export const deleteTopicThunk = (topicId) => {
   return (dispatch, getState) => {
-    const state = getState();
-    state.topics.topics[topicId].quizIds.forEach(quizId => {
-      dispatch(deleteQuiz(quizId))
+    getState().topics.topics[topicId].quizIds.forEach(quizId => {
+      dispatch(deleteQuizThunk(quizId))
     });
     dispatch(deleteTopic(topicId));
   };

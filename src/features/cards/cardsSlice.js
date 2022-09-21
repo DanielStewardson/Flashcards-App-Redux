@@ -14,10 +14,19 @@ const cardsSlice = createSlice({
           [action.payload.id]: action.payload
         }
       };
+    },
+    deleteCard: (state, action) => {
+      const newCards = Object.fromEntries(Object.entries(state.cards).filter(([key]) => !action.payload.includes(key)));
+      return {
+        ...state,
+        cards: {
+          ...newCards
+        }
+      }
     }
   }
 });
 
 export const selectAllCards = (state) => state.cards.cards;
-export const { addCard } = cardsSlice.actions;
+export const { addCard, deleteCard } = cardsSlice.actions;
 export default cardsSlice.reducer;

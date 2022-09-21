@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { addQuizId, removeQuizId } from "../topics/topicsSlice";
+import { deleteCard } from "../cards/cardsSlice";
 
 export const createQuizThunk = (newQuiz) => {
   return (dispatch) => {
@@ -14,13 +15,16 @@ export const createQuizThunk = (newQuiz) => {
 };
 
 export const deleteQuizThunk = (quizId, topicId) => {
-  return (dispatch) => {
-    dispatch(
-      removeQuizId({
-        quizId: quizId,
-        topicId: topicId
-      })
-    );
+  return (dispatch, getState) => {
+    if (topicId) {
+      dispatch(
+        removeQuizId({
+          quizId: quizId,
+          topicId: topicId
+        })
+      );
+    };
+    dispatch(deleteCard(getState().quizzes.quizzes[quizId].cardIds));
     dispatch(deleteQuiz(quizId));
   };
 };
