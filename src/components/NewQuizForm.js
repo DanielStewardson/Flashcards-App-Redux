@@ -23,9 +23,10 @@ export default function NewQuizForm() {
       setQuizPlaceholder('Choose a quiz title!');
       return;
     };
-    
+    // This code can be refactored
+    // Since you have already set a default string in topicPlaceHolder the second string in the conditional will never be read
     if (!topicId) {
-      setTopicPlaceholder(Object.keys(topics).length === 0 ? 'Create a topic first!' : 'Choose a topic!');
+      setTopicPlaceholder('Create a topic first!');
       return;
     };
 

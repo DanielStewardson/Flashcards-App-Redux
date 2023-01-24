@@ -35,21 +35,19 @@ const quizzesSlice = createSlice({
     quizzes: {}
   },
   reducers: {
-    addQuiz: (state, action) => {
-      return {
-        ...state,
-        quizzes: {
-          ...state.quizzes,
-          [action.payload.id]: action.payload
-        }
-      };
+    // We can refactor these action creators
+    // createSlice uses immer, which allows you to update the state using 'mutating' syntax
+    // We therefore don't need to use the spread syntax (...)
+    // To learn more visit: https://redux-toolkit.js.org/usage/immer-reducers
+
+    addQuiz(state, action) {
+      const { id } = action.payload;
+      state.quizzes[action.payload.id] = action.payload;
+
     },
     deleteQuiz: (state, action) => {
       const newQuizzes = Object.fromEntries(Object.entries(state.quizzes).filter(([key]) => key !== action.payload));
-      return {
-        ...state,
-        quizzes: {...newQuizzes}
-      }
+      state.quizzes = newQuizzes;
     }
   }
 });
